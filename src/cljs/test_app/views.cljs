@@ -3,6 +3,9 @@
    [re-frame.core :as re-frame]
    [test-app.subs :as subs]
    [test-app.events :as events]
+
+   ["@material-ui/core" :as mc]
+   [reagent.core :as r]
    ))
 
 (defn main-panel []
@@ -30,8 +33,10 @@
                  :style {:background-color (if (zero? @changes) "grey" "green") }
                  :on-click #(re-frame/dispatch [::events/reset 1])}]
 
-         ]
-       ]
+        [::mc/Button {:variant "contained" :value "hello" :color "blue"}]
       ]
+
+     ]
+    ]
      ))
 

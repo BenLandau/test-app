@@ -5,6 +5,9 @@
    [test-app.events :as events]
    [test-app.views :as views]
    [test-app.config :as config]
+
+   ;;
+   ["@material-ui/core" :as mc]
    ))
 
 
