@@ -26,17 +26,23 @@
           [:input {:type "checkbox"
                    :value @is-checked
                    :on-change #(re-frame/dispatch [::events/checkbox (not @is-checked)])}]
-          "Count changes"
+          "Don't count changes"
           ]]
-      [:div#buttons
-        [:input {:type "button" :color "green" :value "Reset"
-                 :style {:background-color (if (zero? @changes) "grey" "green") }
-                 :on-click #(re-frame/dispatch [::events/reset 1])}]
 
-        [::mc/Button {:variant "contained" :value "hello" :color "blue"}]
-      ]
+       [:> mc/Button
+        {:variant "outlined"
+         :color   (if (empty? @name) "secondary" "primary")
+         :on-click #(re-frame/dispatch [::events/clear-name 1])
+         :disabled (empty? @name)} "CLEAR" ]
 
-     ]
-    ]
-     ))
+       [:> mc/Button
+        {:variant "contained"
+         :color (if (zero? @changes) "secondary" "primary")
+         :on-click #(re-frame/dispatch [::events/reset 1])
+         :disabled (zero? @changes)} "RESET"]]]))
+
+
+
+
+
 
