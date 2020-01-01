@@ -29,6 +29,7 @@
                                                  :http-port    8280
                                                  }}}}
 
+
   :shell {:commands {"open" {:windows ["cmd" "/c" "start"]
                              :macosx  "open"
                              :linux   "xdg-open"}}}

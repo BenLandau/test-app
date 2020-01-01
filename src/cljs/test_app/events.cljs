@@ -34,3 +34,8 @@
   (fn [db [_ _]]
     (assoc db :num-changes 0)))
 
+(re-frame/reg-event-db
+  ::clear-name
+  (fn [db [_ _]]
+    (assoc db :name "")))
+
